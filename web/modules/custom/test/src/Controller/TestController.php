@@ -3,9 +3,16 @@
 namespace Drupal\test\Controller;
 
 use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class TestController {
+class TestController implements ContainerInjectionInterface {
+	private $account;
+	public function __construct(AccountProxy $account) {
+		$this->account = $account;
+	}
 	public function staticContent() {
 		return [
 
@@ -32,14 +39,16 @@ class TestController {
 		}
 	}
 	public function nodeCreatorCheck(NodeInterface $node) {
-		$account = \Drupal::service ( 'current_user' );
-		if ($node->getOwnerId () === $account->id ()) {
+		// $account = \Drupal::service ( 'current_user' );
+		if ($node->getOwnerId () === $this->account->id ()) {
 			return AccessResult::allowed ();
 		} else {
 			return AccessResult::forbidden ();
 		}
 	}
-
+	public static function create(ContainerInterface $container) {
+		return new static ( $container->get ( 'current_user' ) );
+	}
 	/*
 	 * public function upcastedContent(NodeInterface $arg1, NodeInterface $arg2) {
 	 * // print_r();

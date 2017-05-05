@@ -21,3 +21,17 @@ test.entity_upcaster:
     node: 1
   requirements: 
     _custom_access: Drupal\test\Controller\TestController::nodeCreatorCheck
+
+test.simple_form:
+  path: '/simple-form'
+  defaults:
+    _form: '\Drupal\test\Form\SimpleForm'
+  requirements:
+    _permission: 'access content'
+    
+test.dic_form:
+  path: '/dic-form'
+  defaults:
+    _form: '\Drupal\test\Form\DicForm'
+  requirements:
+    _permission: 'access content'

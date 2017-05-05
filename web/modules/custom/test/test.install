@@ -1,0 +1,26 @@
+<?php
+
+function test_schema() {
+  $schema['dic_data'] = array(
+    'fields' => array(
+      'id'=>array(
+        'type'=>'serial',
+        'not null' => TRUE,
+      ),
+      'fname'=>array(
+        'type' => 'varchar_ascii',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+      'lname'=>array(
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+
+}
