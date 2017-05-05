@@ -1,0 +1,5 @@
+test.list:
+  route_name: node.add_page
+  title: 'My list'
+  appears_on:
+    - 'test.entity_upcaster'

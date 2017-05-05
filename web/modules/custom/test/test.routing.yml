@@ -1,0 +1,23 @@
+test.static_content:
+  path: '/static-content' 
+  defaults: 
+    _controller: '\Drupal\test\Controller\TestController::staticContent' 
+    _title: 'Hello world'
+  requirements: 
+    _user_is_logged_in: 'TRUE'
+    
+test.dynamic_content:
+  path : '/arg-demo/{arg}'
+  defaults:
+    _controller: '\Drupal\test\Controller\TestController::dynamicContent'
+    arg: 1
+  requirements: 
+    _permission: 'access content'
+
+test.entity_upcaster:
+  path : '/list/{node}'
+  defaults:
+    _controller: '\Drupal\test\Controller\TestController::upcastedContent'
+    node: 1
+  requirements: 
+    _custom_access: Drupal\test\Controller\TestController::nodeCreatorCheck

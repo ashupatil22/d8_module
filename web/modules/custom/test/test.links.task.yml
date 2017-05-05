@@ -1,0 +1,9 @@
+test.tab1:
+  title: 'Tab1'
+  route_name: test.static_content
+  base_route: test.tab1
+
+test.tab2:
+  title: 'Tab2'
+  route_name: test.dynamic_content
+  base_route: test.tab1

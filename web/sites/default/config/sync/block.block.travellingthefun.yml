@@ -1,0 +1,25 @@
+uuid: c167b2c7-699c-4404-82c9-b46b60eb0393
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3b544079-6608-4d56-948a-09beb4f5d447'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: travellingthefun
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:3b544079-6608-4d56-948a-09beb4f5d447'
+settings:
+  id: 'block_content:3b544079-6608-4d56-948a-09beb4f5d447'
+  label: 'Travelling the fun'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

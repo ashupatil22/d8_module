@@ -1,0 +1,9 @@
+uuid: be2405cc-4b01-47ce-a1a2-1ff15d88d578
+langcode: en
+status: true
+dependencies: {  }
+name: Trips
+vid: trips
+description: ''
+hierarchy: 0
+weight: 0
