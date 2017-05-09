@@ -8,3 +8,12 @@ services:
   test.dbwrapper:
     class: Drupal\test\DbWrapper
     arguments: ['@database']
+    
+  test.weatherreport:
+    class: Drupal\test\WeatherReport
+    arguments: ['@config.factory','@http_client']
+  
+  test.access_header_injector:
+    class: \Drupal\test\Event\AccessHeaderInjector
+    tags:
+      - { name: 'event_subscriber' }

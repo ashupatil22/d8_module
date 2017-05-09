@@ -1,0 +1,16 @@
+name: demo
+type: theme
+description: My Awesome theme
+package: Other
+core: 8.x
+libraries:
+  - demo/global-styling
+
+base theme: bartik
+
+regions:
+  header: Header
+  left_sidebar: Left Sidebar
+  content: Content
+  right_sidebar: Right Sidebar
+  footer: Footer

@@ -35,3 +35,17 @@ test.dic_form:
     _form: '\Drupal\test\Form\DicForm'
   requirements:
     _permission: 'access content'
+test.misc_form:
+  path: '/test/form/misc'
+  defaults:
+    _form: '\Drupal\test\Form\MiscForm'
+    _title: 'MiscForm'
+  requirements:
+    _access: 'TRUE'
+test.weather_content:
+  path : '/admin/weather-config'
+  defaults:
+    _form: '\Drupal\test\Form\WeatherForm'
+  requirements: 
+    _permission: 'access content'
+
